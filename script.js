@@ -53,7 +53,7 @@ qrBtn.addEventListener("click", () => {
 //code for download and share btn
 
 const downBtn = document.querySelector("#qr-download");
-const shareBtn = document.querySelector(".share");
+const shareBtn = document.querySelector("#qr-share");
 
 downBtn.addEventListener("click", () => {
   if (!qrImg.src || qrImg.src === window.location.href) {
