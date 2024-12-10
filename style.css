@@ -101,6 +101,57 @@ body,
   -o-transition: background-color 0.3s, color 0.3s;
 }
 
+.action {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.action button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
+}
+
+#qr-download {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+.download:hover {
+  background-color: darkblue;
+}
+
+.share {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+}
+
+.share:hover {
+  background-color: darkmagenta;
+}
+
+.fa-solid {
+  padding-right: 6px;
+  align-items: center;
+}
+
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 1.25rem;
