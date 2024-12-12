@@ -55,16 +55,26 @@ qrBtn.addEventListener("click", () => {
 const downBtn = document.querySelector("#qr-download");
 const shareBtn = document.querySelector("#qr-share");
 
-downBtn.addEventListener("click", () => {
+downBtn.addEventListener("click", async () => {
   if (!qrImg.src || qrImg.src === window.location.href) {
     alert("No QR code generated to download. Please generate one first.");
     return;
   }
-
-  const link = document.createElement("a");
-  link.href = qrImg.src;
-  link.download = "qr-code.png";
-  link.click();
+  try {
+    const response = await fetch(qrImg.src);
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "qr-code.png";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Error downloading QR Code:", error);
+    alert("An error occurred while downloading.");
+  }
 });
 
 shareBtn.addEventListener("click", async () => {

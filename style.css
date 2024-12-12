@@ -1,10 +1,9 @@
+/* styles.css */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 body {
@@ -13,24 +12,22 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
   border: 1px solid black;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
   padding: 20px;
   width: 90%;
   max-width: 500px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #qr-input {
@@ -38,107 +35,61 @@ h1 {
   width: 100%;
   font-size: 16px;
   padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 #qr-btn {
-  margin-top: 10px;
-  margin-bottom: 10px;
   width: 100%;
   font-size: 1.2rem;
   color: white;
   background-color: green;
   text-transform: capitalize;
-}
-
-.toggle {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.toggle button {
-  padding: 8px 15px;
+  padding: 10px;
+  border: none;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.darkbtn {
-  padding: 5px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  color: black;
-  background-color: white;
-}
-
-.lightbtn {
-  padding: 5px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  color: black;
-  background-color: white;
+#qr-btn:hover {
+  background-color: darkgreen;
 }
 
 #qr-image {
   display: block;
-  width: 50%;
-  margin: 0px auto;
-}
-
-body,
-.container {
-  transition: background-color 0.3s, color 0.3s;
-  -webkit-transition: background-color 0.3s, color 0.3s;
-  -moz-transition: background-color 0.3s, color 0.3s;
-  -ms-transition: background-color 0.3s, color 0.3s;
-  -o-transition: background-color 0.3s, color 0.3s;
+  width: 150px;
+  margin: 20px auto;
 }
 
 .action {
-  margin: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  margin: 20px 0;
 }
 
 .action button {
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-size: 1rem;
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #qr-download {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  cursor: pointer;
   background-color: blue;
   color: white;
 }
 
-.download:hover {
+#qr-download:hover {
   background-color: darkblue;
 }
 
 #qr-share {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  cursor: pointer;
   background-color: purple;
   color: white;
 }
@@ -147,9 +98,37 @@ body,
   background-color: darkmagenta;
 }
 
-.fa-solid {
-  padding-right: 6px;
-  align-items: center;
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.toggle button {
+  flex: 1;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.darkbtn {
+  background-color: black;
+  color: white;
+}
+
+.darkbtn:hover {
+  background-color: #333;
+}
+
+.lightbtn {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.lightbtn:hover {
+  background-color: #ddd;
 }
 
 @media screen and (max-width: 600px) {
@@ -171,17 +150,12 @@ body,
     max-width: 120px;
   }
 
-  .toggle button {
-    font-size: 0.9rem;
-    padding: 5px 10px;
-  }
   .action {
     flex-direction: column;
-    gap: 10px; /* Adds spacing between buttons on smaller screens */
+    gap: 10px;
   }
 
-  #qr-download,
-  #qr-share {
-    width: 100%; /* Buttons take full width on mobile */
+  .action button {
+    width: 100%;
   }
 }
